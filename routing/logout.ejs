@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><%= headTitle %></title>
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+  <%- include("partials/navigation", { menuLinks, activeLinkPath }) %>
+
+  <main>
+    <h1>Do you really want to log out?</h1>
+    <form action="/kill" method="POST">
+      <button type="submit">Logout</button>
+    </form>
+  </main>
+</body>
+</html>
