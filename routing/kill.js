@@ -1,12 +1,14 @@
 const express = require("express");
-
-const logger = require("../utils/logger");
-
 const router = express.Router();
+const { HOME_LINK } = require("../constants/navigation");
 
-router.get("/", () => {
-  logger.getProcessLog();
-  process.exit();
+router.post("/", (req, res) => {
+  res.render("killed", {
+    headTitle: "Session Ended",
+    path: "/kill",
+    menuLinks: [HOME_LINK],
+    activeLinkPath: "/kill"
+  });
 });
 
 module.exports = router;
