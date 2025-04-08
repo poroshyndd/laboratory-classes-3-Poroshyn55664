@@ -9,16 +9,22 @@
   <%- include("partials/navigation", { menuLinks, activeLinkPath }) %>
 
   <main>
-    <h1>Products</h1>
-<% if (products?.length > 0) { %>
-      <ul>
-        <% products.forEach(product => { %>
-          <li>Name: <%= product.name %>, Description: <%= product.description %></li>
-        <% }); %>
-      </ul>
-    <% } else { %>
-      <div>No products available.</div>
-    <% } %>
+    <h1 class="heading">Add a Product</h1>
+
+    <form action="/products/add" method="POST" class="form">
+      <div class="form__group">
+        <label for="name" class="form__label">Product Name</label>
+        <input type="text" id="name" name="name" required class="form__input">
+      </div>
+
+      <div class="form__group">
+        <label for="description" class="form__label">Product Description</label>
+        <input type="text" id="description" name="description" required class="form__input">
+      </div>
+
+      <button type="submit" class="button">Add Product</button>
+    </form>
   </main>
 </body>
 </html>
+
